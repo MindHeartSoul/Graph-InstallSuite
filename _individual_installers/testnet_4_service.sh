@@ -94,7 +94,7 @@ else
 # variables
 ops_mnemonic="$ops_mnemonic"
 admin_address="$admin_address"
-eth_rinkeby="$eth_rinkeby"
+rpc_contracts="$rpc_contracts"
 
 database_pwd="$database_pwd"
 database_access="$database_access"
@@ -131,7 +131,7 @@ graph-indexer-service start \\
 	--metrics-port $service_metrics \\
     --network-subgraph-endpoint \$network_subgraph \\
 	--ethereum-network rinkeby \\
-    --ethereum \$eth_rinkeby \\
+    --ethereum \$rpc_contracts \\
     --mnemonic "\$ops_mnemonic" \\
     --indexer-address \$admin_address \\
 	--client-signer-address $client_signer

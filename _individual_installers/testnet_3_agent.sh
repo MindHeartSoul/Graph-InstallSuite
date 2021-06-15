@@ -90,7 +90,7 @@ else
 #!/bin/bash
 ops_mnemonic="$ops_mnemonic"
 admin_address="$admin_address"
-eth_rinkeby="$eth_rinkeby"
+rpc_contracts="$rpc_contracts"
 
 database_pwd="$database_pwd"
 database_access="$database_access"
@@ -123,7 +123,7 @@ graph-indexer-agent start \\
     --postgres-password \$database_pwd \\
     --network-subgraph-endpoint \$network_subgraph \\
 	--ethereum-network rinkeby \\
-    --ethereum \$eth_rinkeby \\
+    --ethereum \$rpc_contracts \\
     --mnemonic "\$ops_mnemonic" \\
     --indexer-address \$admin_address \\
 	--allocation-claim-threshold \$allocation_threshold \\
