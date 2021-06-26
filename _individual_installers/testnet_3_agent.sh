@@ -132,5 +132,10 @@ EOD
 
 chmod +x $HOME/$agent_unit.sh
 
-
+	# finish info
+	if [ "$_indexer" == 1 ]; then
+	echo -e "Run 'sudo systemctl start $agent_unit' & 'sudo systemctl enable $agent_unit' to start your indexer"
+	echo "To see how your indexer is doing, run 'sudo journalctl --follow -o cat -u $agent_unit' (ctrl+c to stop the logview)."
+	fi
+	
 fi

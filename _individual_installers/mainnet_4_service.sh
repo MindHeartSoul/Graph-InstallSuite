@@ -5,7 +5,7 @@ echo "Installer for 'testnet agent' on 'Ubuntu 18.04'"
 ## common variables
 script=${BASH_SOURCE[0]}
 dir=$(dirname $(readlink -f $0))
-source $dir/testnet_variables.conf
+source $dir/mainnet_variables.conf
 
 ## override / specific variables
 
@@ -139,5 +139,11 @@ graph-indexer-service start \\
 EOD
 
 chmod +x $HOME/$service_unit.sh
+	
+	# finish info
+	if [ "$_indexer" == 1 ]; then
+	echo -e "Run 'sudo systemctl start $service_unit' & 'sudo systemctl enable $service_unit' to start your indexer"
+	echo "To see how your indexer is doing, run 'sudo journalctl --follow -o cat -u $service_unit' (ctrl+c to stop the logview)."
+	fi
 
 fi
