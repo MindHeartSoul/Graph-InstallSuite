@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Installer for 'testnet graph-node' on 'Ubuntu 18.04'"
+echo "Installer for 'mainnet graph-node' on 'Ubuntu 18.04'"
 
 ## common variables
 script=${BASH_SOURCE[0]}

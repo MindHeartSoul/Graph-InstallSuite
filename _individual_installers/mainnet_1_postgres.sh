@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Installer for 'testnet postgres' on 'Ubuntu 18.04'"
+echo "Installer for 'mainnet postgres' on 'Ubuntu 18.04'"
 
 # db pasword write hardcode file
 
