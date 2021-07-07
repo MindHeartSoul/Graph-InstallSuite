@@ -5,7 +5,7 @@ echo "Installer Suite for The Graph on 'Ubuntu 18.04'"
 ## common variables
 script=${BASH_SOURCE[0]}
 dir=$(dirname $(readlink -f $0))
-individual_installers="$dir/_individual_installers"
+individual_installers="$dir/../_individual_installers"
 source $dir/installsuite_variables.conf
 
 ## override / specific variables
