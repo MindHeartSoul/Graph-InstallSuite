@@ -25,7 +25,7 @@ apt-get install -y wget sudo
 echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 apt-get update
-apt-get install -y postgresql-12
+apt-get install -y postgresql-14
 
 # prepare postgres
 if [ -z "$database_pwd" ]; then
