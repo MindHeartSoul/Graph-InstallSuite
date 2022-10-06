@@ -1,13 +1,13 @@
 #!/bin/bash
 
-echo "Installer for 'testnet postgres 14' on 'Ubuntu 20.04'"
+echo "Installer for 'mainnet postgres' on 'Ubuntu 18.04'"
 
 # db pasword write hardcode file
 
 ## common variables
 script=${BASH_SOURCE[0]}
 dir=$(dirname $(readlink -f $0))
-source $dir/testnet_variables.conf
+source $dir/mainnet_variables.conf
 
 ## override / specific variables
 
@@ -31,7 +31,7 @@ apt-get install -y postgresql-14
 if [ -z "$database_pwd" ]; then
 	#read -p "Enter password for postgres : " database_pwd
 	database_pwd=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 44 ; echo '')
-	echo -e "\ndatabase_pwd=$database_pwd" >> $dir/testnet_variables.conf
+	echo -e "\ndatabase_pwd=$database_pwd" >> $dir/mainnet_variables.conf
 fi 
 
 sudo -u postgres psql -c "ALTER USER postgres PASSWORD '$database_pwd';"

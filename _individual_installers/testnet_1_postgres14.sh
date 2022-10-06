@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Installer for 'testnet postgres 14' on 'Ubuntu 20.04'"
+echo "Installer for 'testnet postgres' on 'Ubuntu 18.04'"
 
 # db pasword write hardcode file
 
@@ -25,7 +25,7 @@ apt-get install -y wget sudo
 echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 apt-get update
-apt-get install -y postgresql-14
+apt-get install -y postgresql-12
 
 # prepare postgres
 if [ -z "$database_pwd" ]; then
@@ -38,4 +38,4 @@ sudo -u postgres psql -c "ALTER USER postgres PASSWORD '$database_pwd';"
 sudo -u postgres createdb $database_name
 sudo -u postgres createdb $database_access
 
-echo -e "If you want to access this postgres remotely edit :\n * /etc/postgresql/14/main/postgresql.conf with the appropriate listen_addresses\n * /etc/postgresql/14/main/pg_hba.conf with the corresponding host entries."
+echo -e "If you want to access this postgres remotely edit :\n * /etc/postgresql/12/main/postgresql.conf with the appropriate listen_addresses\n * /etc/postgresql/12/main/pg_hba.conf with the corresponding host entries."

@@ -31,7 +31,7 @@ apt-get install -y postgresql-12
 if [ -z "$database_pwd" ]; then
 	#read -p "Enter password for postgres : " database_pwd
 	database_pwd=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 44 ; echo '')
-	echo -e "\ndatabase_pwd=$database_pwd" >> $dir/testnet_variables.conf
+	echo -e "\ndatabase_pwd=$database_pwd" >> $dir/mainnet_variables.conf
 fi 
 
 sudo -u postgres psql -c "ALTER USER postgres PASSWORD '$database_pwd';"

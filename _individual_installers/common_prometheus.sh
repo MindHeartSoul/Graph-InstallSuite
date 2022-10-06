@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Installer for 'Prometheus' on 'Ubuntu 18.04'"
+echo "Installer for 'Prometheus' on 'Ubuntu 20.04'"
 
 ## common variables
 script=${BASH_SOURCE[0]}
@@ -19,7 +19,7 @@ if [ $USER != "$prometheus_user" ]; then
 	fi
 	
 	# packages
-	apt-get install -y wget tar
+	apt-get install -y wget tar curl
 
 	# user account
 	adduser --disabled-password --gecos "" $prometheus_user
@@ -48,7 +48,7 @@ EOD
 	
 
 	# switch user
-	echo "login as $gebruiker by running 'su $gebruiker' and start script again"
+	echo "loging in as $prometheus_user, now run 'bash $dir/$script' again"
 	su $prometheus_user
 	exit 0
 

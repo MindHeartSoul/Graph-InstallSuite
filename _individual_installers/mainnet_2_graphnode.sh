@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Installer for 'mainnet graph-node' on 'Ubuntu 18.04'"
+echo "Installer for 'mainnet graph-node' on 'Ubuntu 20.04'"
 
 ## common variables
 script=${BASH_SOURCE[0]}
@@ -188,8 +188,8 @@ chmod +x $HOME/$indexer_unit.sh
 	
 	# finish info
 	if [ "$_indexer" == 1 ]; then
-	echo -e "Run 'sudo systemctl start $indexer_unit' & 'sudo systemctl enable $indexer_unit' to start your indexer"
-	echo "To see how your indexer is doing, run 'sudo journalctl --follow -o cat -u $indexer_unit' (ctrl+c to stop the logview)."
+		echo -e "Run 'sudo systemctl start $indexer_unit' & 'sudo systemctl enable $indexer_unit' to start your indexer"
+		echo "To see how your indexer is doing, run 'sudo journalctl --follow -o cat -u $indexer_unit' (ctrl+c to stop the logview)."
 	fi
 	
 	if [ "$_query" == 1 ]; then
